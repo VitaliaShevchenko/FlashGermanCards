@@ -28,6 +28,7 @@
   width: 16%;
   padding: 10px;
   font-size: 20px;
+  min-width: 150px;
 }
 
 .card-container {
