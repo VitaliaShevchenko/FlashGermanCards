@@ -35,35 +35,48 @@ const wordsA2 = [
 const cards = document.querySelectorAll('.card');
 const germanWord = document.querySelector('.word');
 const exampleSentance = document.querySelector('.example');
-const translation = document.querySelector('.translation')
-const nextWordButton = document.querySelector('.next-word-button')
+const translation = document.querySelector('.translation');
+const nextWordButton = document.querySelector('.next-word-button');
+const showAnswerButton = document.querySelector('.js-show-answer-button');
+const clickedButton = localStorage.getItem('clickedButton');
+const answerContainer = document.querySelector('.german-answer-hidden');
+
 // function to get a random number to pick a random word out of an array of words
 function getRandomIndex(wordsArray) {
   const randomWordIndex = Math.floor(Math.random() * wordsArray.length);
   return randomWordIndex;
 }
 
-function renderCardContent(wordsArray) {
-  const randomIndex = getRandomIndex(wordsArray);
-  germanWord.textContent = wordsArray[randomIndex].german
-  translation.textContent = wordsArray[randomIndex].english
-  exampleSentance.textContent = wordsArray[randomIndex].example
-}
-
-const clickedButton = localStorage.getItem('clickedButton');
-
 if (clickedButton === 'a1Btn') {
-  renderCardContent(wordsA1);
+  renderWord(wordsA1);
 } else if(clickedButton === 'a2Btn') {
-  renderCardContent(wordsA2);
+  renderWord(wordsA2);
 } else {
 
 }
 
+function renderWord(wordsArray) {
+  const randomIndex = getRandomIndex(wordsArray);
+  germanWord.textContent = wordsArray[randomIndex].german;
+  translation.textContent = wordsArray[randomIndex].english;
+  exampleSentance.textContent = wordsArray[randomIndex].example;
+}
+
+function renderAnswer(wordsArray) {
+  const randomIndex = getRandomIndex(wordsArray);
+  germanWord.textContent = wordsArray[randomIndex].german;
+  exampleSentance.textContent = wordsArray[randomIndex].example;
+}
+
 nextWordButton.addEventListener('click', () => {
   if (clickedButton === 'a1Btn') {
-    renderCardContent(wordsA1);
+    renderWord(wordsA1);
   } else if(clickedButton === 'a2Btn') {
-    renderCardContent(wordsA2);
+    renderWord(wordsA2);
   }
+  answerContainer.classList.add('german-answer-hidden');
+})
+
+showAnswerButton.addEventListener('click', function () {
+  answerContainer.classList.remove('german-answer-hidden');
 })
