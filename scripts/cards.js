@@ -273,7 +273,7 @@ const showAnswerButton = document.querySelector('.js-show-answer-button');
 const previousCardButton = document.querySelector('.js-previous-card-button');
 const clickedButton = localStorage.getItem('clickedButton');
 const answerContainer = document.querySelector('.german-answer-hidden');
-// let savedCard = [];
+const shownCardsIndexes = [];
 
 // function to get a random number to pick a random word out of an array of words
 function getRandomIndex(wordsArray) {
@@ -281,10 +281,39 @@ function getRandomIndex(wordsArray) {
   return randomWordIndex;
 }
 
-if (clickedButton === 'a1Btn') {
-  renderWord(wordsA1);
-} else if(clickedButton === 'a2Btn') {
-  renderWord(wordsA2);
+function renderCard(isPreviousCard = false) {
+  let index;
+
+  if (isPreviousCard) {
+    if (shownCardsIndexes.length > 1) {
+      index = shownCardsIndexes[shownCardsIndexes.length - 2];
+      shownCardsIndexes.pop();
+    }
+  } else {
+    if (clickedButton === 'a1Btn') {
+      index = getRandomIndex(wordsA1);
+    } else if (clickedButton === 'a2Btn') {
+      index = getRandomIndex(wordsA2);
+    }
+  }
+
+  if (index) {
+    if (clickedButton === 'a1Btn') {
+      renderWord(wordsA1[index]);
+    } else if(clickedButton === 'a2Btn') {
+      renderWord(wordsA2[index]);
+    }
+
+    answerContainer.classList.add('german-answer-hidden');
+
+    if (!isPreviousCard) {
+      shownCardsIndexes.push(index);
+    }
+  }
+}
+
+if (clickedButton) {
+  renderCard();
 } else {
   translation.innerHTML = `
   <p>You have to choose your level</p>
@@ -292,49 +321,14 @@ if (clickedButton === 'a1Btn') {
   `;
 }
 
-
-
-function renderWord(wordsArray) {
-    const randomIndex = getRandomIndex(wordsArray);
-    germanWord.textContent = wordsArray[randomIndex].german;
-    translation.textContent = wordsArray[randomIndex].english;
-    exampleSentance.textContent = wordsArray[randomIndex].example;
-}
-
-//THIS DOES NOT WORK
-// function saveRenderedCard() {
-//   savedCard = [];
-//   let savedObj = {
-//     german: germanWord.textContent,
-//     english: translation.textContent,
-//     example: exampleSentance.textContent
-//   }
-//   savedCard.push(savedObj);
-// }
-
-// function renderSavedCard() {
-//   germanWord.textContent = savedCard.german;
-//     translation.textContent = savedCard.english;
-//     exampleSentance.textContent = savedCard.example;
-// }
-
-
-
-function renderAnswer(wordsArray) {
-  const randomIndex = getRandomIndex(wordsArray);
-  germanWord.textContent = wordsArray[randomIndex].german;
-  exampleSentance.textContent = wordsArray[randomIndex].example;
+function renderWord(word) {
+    germanWord.textContent = word.german;
+    translation.textContent = word.english;
+    exampleSentance.textContent = word.example;
 }
 
 nextWordButton.addEventListener('click', (event) => {
-  if (clickedButton === 'a1Btn') {
-    renderWord(wordsA1);
-  } else if(clickedButton === 'a2Btn') {
-    renderWord(wordsA2);
-  }
-  answerContainer.classList.add('german-answer-hidden');
-  //saveRenderedCard();
-  //console.log(savedCard);
+  renderCard();
 })
 
 showAnswerButton.addEventListener('click', () => {
@@ -342,7 +336,6 @@ showAnswerButton.addEventListener('click', () => {
 })
 
 
-// THIS DOES NOT WORK
-// previousCardButton.addEventListener('click', () => {
-//   renderSavedCard();
-// })
+previousCardButton.addEventListener('click', () => {
+  renderCard(true);
+})
