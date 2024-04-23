@@ -270,8 +270,10 @@ const exampleSentance = document.querySelector('.example');
 const translation = document.querySelector('.translation');
 const nextWordButton = document.querySelector('.next-word-button');
 const showAnswerButton = document.querySelector('.js-show-answer-button');
+const previousCardButton = document.querySelector('.js-previous-card-button');
 const clickedButton = localStorage.getItem('clickedButton');
 const answerContainer = document.querySelector('.german-answer-hidden');
+// let savedCard = [];
 
 // function to get a random number to pick a random word out of an array of words
 function getRandomIndex(wordsArray) {
@@ -284,15 +286,37 @@ if (clickedButton === 'a1Btn') {
 } else if(clickedButton === 'a2Btn') {
   renderWord(wordsA2);
 } else {
-
+  translation.innerHTML = `
+  <p>You have to choose your level</p>
+  <button class="btn btn-primary link-btn not-chosen-level-btn"><a href="choose-level.html">Choose level</a></button>
+  `;
 }
+
+
 
 function renderWord(wordsArray) {
-  const randomIndex = getRandomIndex(wordsArray);
-  germanWord.textContent = wordsArray[randomIndex].german;
-  translation.textContent = wordsArray[randomIndex].english;
-  exampleSentance.textContent = wordsArray[randomIndex].example;
+    const randomIndex = getRandomIndex(wordsArray);
+    germanWord.textContent = wordsArray[randomIndex].german;
+    translation.textContent = wordsArray[randomIndex].english;
+    exampleSentance.textContent = wordsArray[randomIndex].example;
 }
+
+//THIS DOES NOT WORK
+// function saveRenderedCard() {
+//   savedCard = [];
+//   let savedObj = {
+//     german: germanWord.textContent,
+//     english: translation.textContent,
+//     example: exampleSentance.textContent
+//   }
+//   savedCard.push(savedObj);
+// }
+
+// function renderSavedCard() {
+//   germanWord.textContent = savedCard.german;
+//     translation.textContent = savedCard.english;
+//     exampleSentance.textContent = savedCard.example;
+// }
 
 
 
@@ -302,15 +326,23 @@ function renderAnswer(wordsArray) {
   exampleSentance.textContent = wordsArray[randomIndex].example;
 }
 
-nextWordButton.addEventListener('click', () => {
+nextWordButton.addEventListener('click', (event) => {
   if (clickedButton === 'a1Btn') {
     renderWord(wordsA1);
   } else if(clickedButton === 'a2Btn') {
     renderWord(wordsA2);
   }
   answerContainer.classList.add('german-answer-hidden');
+  //saveRenderedCard();
+  //console.log(savedCard);
 })
 
-showAnswerButton.addEventListener('click', function () {
+showAnswerButton.addEventListener('click', () => {
   answerContainer.classList.remove('german-answer-hidden');
 })
+
+
+// THIS DOES NOT WORK
+// previousCardButton.addEventListener('click', () => {
+//   renderSavedCard();
+// })

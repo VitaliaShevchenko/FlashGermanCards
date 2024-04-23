@@ -23,9 +23,8 @@
 }
 
 .start-btn {
-  position: absolute;
-  left: 38%;
-  width: 24%;
+  display: block;
+  margin: auto;
   padding: 10px;
   font-size: 20px;
   width: 25%;
@@ -34,7 +33,7 @@
 
 .card-container {
   margin: auto;
-  border: 1px solid black;
+  border: 3px solid rgb(126, 125, 125);
   border-radius: 10px;
   width: 40%;
   min-width: 320px;
@@ -59,7 +58,8 @@
 }
 
 .next-word-button,
-.show-answer-button {
+.show-answer-button,
+.previous-card-button {
   margin: auto;
   margin-top: 10px;
   width: 40%;
@@ -91,6 +91,14 @@
   display: none;
 }
 
+.not-chosen-level-btn {
+  padding: 20px;
+  background-color: #16C79A;
+  border: none;
+  font-style: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
 
 
 
