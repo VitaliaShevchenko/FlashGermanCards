@@ -24,10 +24,11 @@
 
 .start-btn {
   position: absolute;
-  left: 42%;
-  width: 16%;
+  left: 38%;
+  width: 24%;
   padding: 10px;
   font-size: 20px;
+  width: 25%;
   min-width: 150px;
 }
 
