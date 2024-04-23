@@ -6,7 +6,7 @@ class Word {
   }
 }
 
-const wordsA1 = [
+export const wordsA1 = [
   new Word("die Familie", "family", "Meine Familie ist sehr groß."),
   new Word("der Mann", "man", "Der Mann liest die Zeitung."),
   new Word("die Frau", "woman", "Die Frau kocht das Abendessen."),
@@ -169,7 +169,7 @@ const wordsA1 = [
   new Word("dürfen", "to be allowed to", "Du darfst nicht rauchen.")
 ];
 
-const wordsA2 = [
+export const wordsA2 = [
     new Word("die Arbeit", "work", "Ich habe viel Arbeit."),
     new Word("der Arm", "arm", "Mein Arm tut weh."),
     new Word("der Arzt", "doctor", "Ich gehe zum Arzt."),
@@ -263,7 +263,6 @@ const wordsA2 = [
     new Word("das Zimmer", "room", "Mein Zimmer ist groß."),
  ];
 
-
 const cards = document.querySelectorAll('.card');
 const germanWord = document.querySelector('.word');
 const exampleSentance = document.querySelector('.example');
@@ -274,6 +273,7 @@ const previousCardButton = document.querySelector('.js-previous-card-button');
 const clickedButton = localStorage.getItem('clickedButton');
 const answerContainer = document.querySelector('.german-answer-hidden');
 const shownCardsIndexes = [];
+
 
 // function to get a random number to pick a random word out of an array of words
 function getRandomIndex(wordsArray) {

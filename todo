@@ -1,4 +1,3 @@
 // check if the words match in A1 and A2 and delete if they
-// add functionality to go back to the previous card
-
-// when card is rendered = > save the rendered components of the card in a variable, and render the saved card on a click of the "Previous card" button
+// if user sees the first card - hide the button "previous card" or make it inactive
+// render all words on all words page
