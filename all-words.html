@@ -8,7 +8,7 @@
   <title>Flash Cards</title>
 </head>
 <body>
-  <div class="container-fluid main-container js-main-container">
+  <div class="container-fluid js-main-container">
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">Flash German Cards</a>
@@ -42,20 +42,10 @@
         </div>
       </div>
     </nav>
-      <div class="card-button-container"><div class="card-container">
-        <p class="translation"></p>
-        <div class="german-answer-hidden">
-          <p class="word"></p>
-          <p class="example"></p>
-        </div>
-      </div>
-      <button class="btn btn-primary next-word-button js-next-word-button">See next card</button>
-      <button class="btn btn-primary show-answer-button js-show-answer-button">Show answer</button>
-      <button class="btn btn-primary previous-card-button js-previous-card-button disabled-previous-card" disabled>Previous Card</button>
-    </div>
-    
+    <div class="all-words-container container-fluid"></div>
   </div>
-  <script src="scripts/cards.js" type="module"></script>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./scripts/all-words.js" type="module"></script>
 </body>
 </html>
