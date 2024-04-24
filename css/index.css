@@ -61,7 +61,6 @@
 .show-answer-button,
 .previous-card-button {
   margin: auto;
-  margin-top: 10px;
   width: 40%;
   min-width: 320px;
   &:hover, &:focus-within {
@@ -72,12 +71,12 @@
 
 .show-answer-button {
   background-color: darkcyan;
-  border: none;
+  border: 1px solid darkcyan;
 }
 
 .show-answer-button:hover {
   background-color: rgb(25, 92, 92);
-  border: none;
+  border: 1px solid rgb(25, 92, 92);
 }
 
 .card-button-container {
@@ -85,6 +84,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  gap: 7px;
 }
 
 .german-answer-hidden {
@@ -98,4 +98,13 @@
   font-style: bold;
   font-size: 20px;
   margin-bottom: 20px;
+}
+
+.disabled-previous-card {
+  background-color: rgba(233, 196, 94, 0.348);
+}
+
+.previous-card-button {
+  background-color: rgb(233, 196, 94);
+  border: 1px solid rgb(233, 196, 94);
 }

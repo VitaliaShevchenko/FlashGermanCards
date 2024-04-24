@@ -263,7 +263,6 @@ export const wordsA2 = [
     new Word("das Zimmer", "room", "Mein Zimmer ist groß."),
  ];
 
-const cards = document.querySelectorAll('.card');
 const germanWord = document.querySelector('.word');
 const exampleSentance = document.querySelector('.example');
 const translation = document.querySelector('.translation');
@@ -274,6 +273,8 @@ const clickedButton = localStorage.getItem('clickedButton');
 const answerContainer = document.querySelector('.german-answer-hidden');
 const shownCardsIndexes = [];
 
+document.addEventListener('load', () => {
+})
 
 // function to get a random number to pick a random word out of an array of words
 function getRandomIndex(wordsArray) {
@@ -329,6 +330,8 @@ function renderWord(word) {
 
 nextWordButton.addEventListener('click', (event) => {
   renderCard();
+  previousCardButton.removeAttribute('disabled');
+  previousCardButton.classList.remove('disabled-previous-card');
 })
 
 showAnswerButton.addEventListener('click', () => {
