@@ -1,14 +1,19 @@
-import { wordsA1, wordsA2 } from "./cards.js";
+const linkA1list = document.querySelector('.js-a1-list-link');
+const linkA2list = document.querySelector('.js-a2-list-link');
+const linkWholeList = document.querySelector('.js-whole-list-link');
 
-const contentContainer = document.querySelector('.js-content-container');
-
-function renderAllWordsInArray(wordsArray) {
-  for (let i = 0; i < wordsArray.length; i++) {
-    const wordDiv = document.createElement('div');
-    wordDiv.textContent = renderCard();
-    greeting.append(wordDiv);
-    wordDiv.classList.add('styles');
-  }
+window.onload = () => {
+  localStorage.clear();
 }
 
-console.log(wordsA1[10])
+linkA1list.addEventListener('click', () => {
+  localStorage.setItem('clickedLink', 'a1-list-link');
+});
+
+linkA2list.addEventListener('click', () => {
+  localStorage.setItem('clickedLink', 'a2-list-link');
+});
+
+linkWholeList.addEventListener('click', () => {
+  localStorage.setItem('clickedLink', 'whole-list-link');
+})

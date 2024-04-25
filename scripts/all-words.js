@@ -1,4 +1,5 @@
 import { wordsA1, wordsA2 } from "./words.js";
+
 const allWordsContainer = document.querySelector('.all-words-container')
 
 function renderAllWords(wordsArray) {
