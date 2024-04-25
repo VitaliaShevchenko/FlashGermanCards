@@ -1,3 +1,4 @@
 // check if the words match in A1 and A2 and delete if they
 // make prev card button inactive every time when user reaches fist card rendered on the page
 // add filters to show A1/A2 or all the words => if user press A2 link page should be chosen on A2 words, and so on
+// make a level identifier work on A2 array

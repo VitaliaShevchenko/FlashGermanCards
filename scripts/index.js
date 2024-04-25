@@ -16,4 +16,4 @@ linkA2list.addEventListener('click', () => {
 
 linkWholeList.addEventListener('click', () => {
   localStorage.setItem('clickedLink', 'whole-list-link');
-})
+});

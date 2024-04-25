@@ -118,6 +118,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 15px;
+  margin-top: 30px;
 }
 
 .word-container {
@@ -130,6 +131,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
 }
 
 .german-word {
@@ -145,4 +147,15 @@
   color: rgb(81,115,81);
   font-style: italic;
 
+}
+
+.level-sign {
+  margin-left: 5px;
+  margin-top: 3px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  color:darkgreen;
 }
