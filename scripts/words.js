@@ -262,3 +262,4 @@ export const wordsA2 = [
     new Word("das Wörterbuch", "dictionary", "Das Wörterbuch ist wichtig."),
     new Word("das Zimmer", "room", "Mein Zimmer ist groß."),
  ];
+
