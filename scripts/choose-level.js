@@ -9,6 +9,7 @@ window.onload = () => {
   localStorage.clear();
 }
 
+
 if (a1Btn && a2Btn) {
   a1Btn.addEventListener('click', () => {
     localStorage.setItem('clickedButton', 'a1Btn');
@@ -17,8 +18,6 @@ if (a1Btn && a2Btn) {
     localStorage.setItem('clickedButton', 'a2Btn');
 })
 }
-
-
 
 
 a1Link.addEventListener('click', () => {

@@ -73,6 +73,12 @@
   }
 }
 
+.previous-card-button:hover { 
+  background-color: rgb(204, 171, 83);
+  border: 1px solid  rgb(204, 171, 83);
+
+}
+
 .show-answer-button {
   background-color: darkcyan;
   border: 1px solid darkcyan;
@@ -117,7 +123,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 15px;
+  gap: 5px;
   margin-top: 30px;
 }
 
@@ -158,4 +164,12 @@
   font-size: 12px;
   font-weight: bold;
   color:darkgreen;
+}
+
+.search-word-text {
+  padding-left: 4px;
+  margin-bottom: 0;
+  width: 250px;
+  text-align: center;
+  font-weight: bold;
 }

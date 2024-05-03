@@ -13,7 +13,6 @@ if (clickedLink) {
   }
 }
 
-
 new gridjs.Grid({
   columns: ["German", "English", "Example sentence"],
   data: renderedData,
@@ -28,25 +27,3 @@ new gridjs.Grid({
     keyword: ""
   }
 }).render(document.getElementById("wrapper"));
-
-
-
-
-
-
-// function renderWordsGrid(wordsArray) {
-//   renderWord = [];
-//   if (clickedLink === 'a1Link') {
-//     wordsArray = wordsA1;
-//   } else if (clickedLink === 'a2Link') {
-//     wordsArray = wordsA2;
-//   } else if (clickedLink === 'whileListLink') {
-//     wordsArray = wordsA1.concat(wordsA2);
-//   }
-
-//   renderedData = wordsArray.map((word) => {
-//     renderWord.push(word.german);
-//     renderWord.push(word.english);
-//     renderWord.push(word.example);
-//   });
-//   }
