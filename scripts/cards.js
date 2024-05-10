@@ -1,4 +1,4 @@
-import { wordsA1, wordsA2 } from "./words.js";
+import { wordsA1, wordsA2, wordsB1 } from "./words.js";
 
 const germanWord = document.querySelector('.word');
 const exampleSentance = document.querySelector('.example');
@@ -31,6 +31,8 @@ function renderCard(isPreviousCard = false) {
       index = getRandomIndex(wordsA1);
     } else if (clickedButton === 'a2Btn') {
       index = getRandomIndex(wordsA2);
+    } else if (clickedButton === 'b1Btn') {
+      index = getRandomIndex(wordsB1);
     }
   }
 
@@ -40,6 +42,9 @@ function renderCard(isPreviousCard = false) {
       currentlyLoadedCard = index;
     } else if(clickedButton === 'a2Btn') {
       renderWord(wordsA2[index]);
+      currentlyLoadedCard = index;
+    } else if(clickedButton === 'b1Btn') {
+      renderWord(wordsB1[index]);
       currentlyLoadedCard = index;
     }
 
