@@ -8,6 +8,8 @@ const showAnswerButton = document.querySelector('.js-show-answer-button');
 const previousCardButton = document.querySelector('.js-previous-card-button');
 const clickedButton = localStorage.getItem('clickedButton');
 const answerContainer = document.querySelector('.german-answer-hidden');
+const cardPic = document.querySelector('.card-picture');
+let picWord;
 let firstLoadedCard;
 let currentlyLoadedCard;
 const shownCardsIndexes = [];
@@ -40,12 +42,15 @@ function renderCard(isPreviousCard = false) {
     if (clickedButton === 'a1Btn') {
       renderWord(wordsA1[index]);
       currentlyLoadedCard = index;
+      picWord = wordsA1[index].english;
     } else if(clickedButton === 'a2Btn') {
       renderWord(wordsA2[index]);
       currentlyLoadedCard = index;
+      picWord = wordsA2[index].english;
     } else if(clickedButton === 'b1Btn') {
       renderWord(wordsB1[index]);
       currentlyLoadedCard = index;
+      picWord = wordsB1[index].english;
     }
 
     answerContainer.classList.add('german-answer-hidden');
@@ -80,7 +85,7 @@ nextWordButton.addEventListener('click', (event) => {
   renderCard();
   previousCardButton.removeAttribute('disabled');
   previousCardButton.classList.remove('disabled-previous-card');
-  
+  getData(picWord);
 })
 
 showAnswerButton.addEventListener('click', () => {
@@ -93,4 +98,23 @@ previousCardButton.addEventListener('click', () => {
     previousCardButton.setAttribute('disabled', '');
     previousCardButton.classList.add('disabled-previous-card');
   }
+  getData(picWord);
 })
+
+async function getData(searchedPic) {
+  const response = await fetch(`https://pixabay.com/api/?key=43577378-80b187136468c26eeafed5a0f&q=${searchedPic}`);
+  if (response.status === 200) {
+      const data = await response.json();
+      cardPic.setAttribute('src', `${data.hits[2].largeImageURL}`);
+  } else {
+      alert('there is error calling api ' + response.status )
+  }  
+}
+
+getData(picWord);
+
+// button.addEventListener('click', () => {
+//     const input = document.getElementById('country');
+//     let inputValue = input.value;
+//     getData(inputValue);
+// })

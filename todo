@@ -1,3 +1,5 @@
 take words into the data base
 add b2, c1 and c2 words
 increase amount of words in the levels
+
+add a picture above the card, which will take the english word and get a picture from API and display it

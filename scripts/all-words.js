@@ -11,7 +11,7 @@ if (clickedLink) {
   } else if (clickedLink === 'b1Link') {
     renderedData = wordsB1.map(word => [word.german, word.english, word.example])
   } else if (clickedLink === 'wholeListLink') {
-    renderedData = wordsA1.map(word => [word.german, word.english, word.example]).concat(wordsA2.map(word => [word.german, word.english, word.example]))
+    renderedData = wordsA1.map(word => [word.german, word.english, word.example]).concat(wordsA2.map(word => [word.german, word.english, word.example]).concat(wordsB1.map(word => [word.german, word.english, word.example])))
   }
 }
 
