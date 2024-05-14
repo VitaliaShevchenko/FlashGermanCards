@@ -1,16 +1,16 @@
 import { wordsA1, wordsA2, wordsB1 } from "./words.js";
-const clickedLink = localStorage.getItem('clickedLink');
+const clickedLink = localStorage.getItem('listLevel');
 let renderedData = []; 
 
 
 if (clickedLink) {
-  if (clickedLink === 'a1Link') {
+  if (clickedLink === 'A1') {
     renderedData = wordsA1.map(word => [word.german, word.english, word.example])
-  } else if (clickedLink === 'a2Link') {
+  } else if (clickedLink === 'A2') {
     renderedData = wordsA2.map(word => [word.german, word.english, word.example])
-  } else if (clickedLink === 'b1Link') {
+  } else if (clickedLink === 'B1') {
     renderedData = wordsB1.map(word => [word.german, word.english, word.example])
-  } else if (clickedLink === 'wholeListLink') {
+  } else if (clickedLink === 'WHOLE') {
     renderedData = wordsA1.map(word => [word.german, word.english, word.example]).concat(wordsA2.map(word => [word.german, word.english, word.example]).concat(wordsB1.map(word => [word.german, word.english, word.example])))
   }
 }

@@ -6,7 +6,7 @@ const translation = document.querySelector('.translation');
 const nextWordButton = document.querySelector('.next-word-button');
 const showAnswerButton = document.querySelector('.js-show-answer-button');
 const previousCardButton = document.querySelector('.js-previous-card-button');
-const clickedButton = localStorage.getItem('clickedButton');
+const clickedButton = localStorage.getItem('level');
 const answerContainer = document.querySelector('.german-answer-hidden');
 const cardPic = document.querySelector('.card-picture');
 let picWord;
@@ -14,7 +14,6 @@ let firstLoadedCard;
 let currentlyLoadedCard;
 const shownCardsIndexes = [];
 
-// function to get a random number to pick a random word out of an array of words
 function getRandomIndex(wordsArray) {
   const randomWordIndex = Math.floor(Math.random() * wordsArray.length);
   return randomWordIndex;
@@ -29,25 +28,25 @@ function renderCard(isPreviousCard = false) {
       shownCardsIndexes.pop();
     }
   } else {
-    if (clickedButton === 'a1Btn') {
+    if (clickedButton === 'A1') {
       index = getRandomIndex(wordsA1);
-    } else if (clickedButton === 'a2Btn') {
+    } else if (clickedButton === 'A2') {
       index = getRandomIndex(wordsA2);
-    } else if (clickedButton === 'b1Btn') {
+    } else if (clickedButton === 'B1') {
       index = getRandomIndex(wordsB1);
     }
   }
 
   if (index) {
-    if (clickedButton === 'a1Btn') {
+    if (clickedButton === 'A1') {
       renderWord(wordsA1[index]);
       currentlyLoadedCard = index;
       picWord = wordsA1[index].english;
-    } else if(clickedButton === 'a2Btn') {
+    } else if(clickedButton === 'A2') {
       renderWord(wordsA2[index]);
       currentlyLoadedCard = index;
       picWord = wordsA2[index].english;
-    } else if(clickedButton === 'b1Btn') {
+    } else if(clickedButton === 'B1') {
       renderWord(wordsB1[index]);
       currentlyLoadedCard = index;
       picWord = wordsB1[index].english;
@@ -112,9 +111,3 @@ async function getData(searchedPic) {
 }
 
 getData(picWord);
-
-// button.addEventListener('click', () => {
-//     const input = document.getElementById('country');
-//     let inputValue = input.value;
-//     getData(inputValue);
-// })
