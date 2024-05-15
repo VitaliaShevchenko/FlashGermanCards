@@ -112,7 +112,7 @@ async function getData(searchedPic) {
         cardPic.setAttribute('src', `../images/default-pic.jpg`);
       } else {
         cardPic.setAttribute('src', `${data.hits[randomPicIndex()].webformatURL}`);
-      }    
+      }
   } else {
       alert('there is error calling api ' + response.status )
   }  

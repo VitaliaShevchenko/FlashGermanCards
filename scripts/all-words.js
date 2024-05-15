@@ -1,7 +1,8 @@
 import { wordsA1, wordsA2, wordsB1 } from "./words.js";
 const clickedLink = localStorage.getItem('listLevel');
+// const sortingBtn = document.querySelector('.js-sorting-btn');
 let renderedData = []; 
-
+// let sorting = true;
 
 if (clickedLink) {
   if (clickedLink === 'A1') {
@@ -15,7 +16,16 @@ if (clickedLink) {
   }
 }
 
+// function handleSortingBtn() {
+//   if(sorting) {
+//     sorting = false;
+//   } else if(!sorting) {
+//     sorting = true
+//   }
+//   console.log(sorting)
+// }
 
+// sortingBtn.addEventListener('click', handleSortingBtn);
 
 new gridjs.Grid({
   columns: ["German", "English", "Example sentence"],
@@ -23,9 +33,7 @@ new gridjs.Grid({
   pagination: {
     limit: 10
   },
-  sort: {
-    multiColumn: false
-  },
+  sort: sorting,
   autoWidth: true,
   search: {
     keyword: ""
