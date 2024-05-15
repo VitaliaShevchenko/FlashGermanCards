@@ -19,6 +19,10 @@ function getRandomIndex(wordsArray) {
   return randomWordIndex;
 }
 
+const randomPicIndex = () => {
+  return Math.floor(Math.random() * 10)
+}
+
 function renderCard(isPreviousCard = false) {
   let index;
 
@@ -104,7 +108,11 @@ async function getData(searchedPic) {
   const response = await fetch(`https://pixabay.com/api/?key=43577378-80b187136468c26eeafed5a0f&q=${searchedPic}`);
   if (response.status === 200) {
       const data = await response.json();
-      cardPic.setAttribute('src', `${data.hits[2].largeImageURL}`);
+      if (!data.hits[0]) {
+        cardPic.setAttribute('src', `../images/default-pic.jpg`);
+      } else {
+        cardPic.setAttribute('src', `${data.hits[randomPicIndex()].webformatURL}`);
+      }    
   } else {
       alert('there is error calling api ' + response.status )
   }  

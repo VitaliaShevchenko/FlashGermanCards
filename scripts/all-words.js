@@ -15,6 +15,8 @@ if (clickedLink) {
   }
 }
 
+
+
 new gridjs.Grid({
   columns: ["German", "English", "Example sentence"],
   data: renderedData,
