@@ -8,6 +8,8 @@ const showAnswerButton = document.querySelector('.js-show-answer-button');
 const previousCardButton = document.querySelector('.js-previous-card-button');
 const clickedButton = localStorage.getItem('level');
 const answerContainer = document.querySelector('.german-answer-hidden');
+const auth =
+    'ci9ft5ZOQB7lYFAL4XZmv3iyBLAzwDD1Mv2Lv8K5iNUu94Rnb4EmXk7T'
 const cardPic = document.querySelector('.card-picture');
 let picWord;
 let firstLoadedCard;
@@ -20,7 +22,7 @@ function getRandomIndex(wordsArray) {
 }
 
 const randomPicIndex = () => {
-  return Math.floor(Math.random() * 10)
+  return Math.floor(Math.random() * 14)
 }
 
 function renderCard(isPreviousCard = false) {
@@ -105,17 +107,30 @@ previousCardButton.addEventListener('click', () => {
 })
 
 async function getData(searchedPic) {
-  const response = await fetch(`https://pixabay.com/api/?key=43577378-80b187136468c26eeafed5a0f&q=${searchedPic}`);
-  if (response.status === 200) {
-      const data = await response.json();
-      if (!data.hits[0]) {
+  const response = await fetch(`https://api.pexels.com/v1/search?query=${searchedPic}&orientation=landscape&size=small`, {
+    method: "GET",
+    headers: {
+        Accept: "application/json",
+        Authorization: auth,
+    }
+  })
+  .then(response => response.json())
+  .then(response => {
+  let picLink;
+  if (response.photos.length < 15) {
+    picLink = response.photos[0].src.medium
+    } else {
+      picLink = response.photos[randomPicIndex()].src.medium;
+    }
+  console.log(response);
+  if (!response) {
         cardPic.setAttribute('src', `../images/default-pic.jpg`);
       } else {
-        cardPic.setAttribute('src', `${data.hits[randomPicIndex()].webformatURL}`);
+        cardPic.setAttribute('src', `${picLink}`);
       }
-  } else {
-      alert('there is error calling api ' + response.status )
-  }  
-}
+  })
+        
+  }
+  
 
 getData(picWord);

@@ -1,24 +1,88 @@
 * {
-  font-family:Verdana, Geneva, Tahoma, sans-serif
+  font-family: "Poppins", sans-serif;
 }
 
-.greeting {
-  margin-bottom: 40px;
-  margin-top: 40px;
-  text-align: center;
+body {
+  background-color: #8ae9b3;
+  background-image: linear-gradient(315deg, #b2e8ca 0%, #e1e9f0 74%);
+  background-size: 100% auto;
+  background-position: center top;
+  background-attachment: fixed;
+}
+
+.navbar {
+  background-color: #8ae9b3;
+}
+
+.main-container {
+  width: 100%;
+  padding: 0;
 }
 
 .choose-level-text {
+  margin: 40px auto;
+  text-align: center;
+  width: 80%;
+}
+
+/* .choose-level-text {
   text-align: center;
   width: 80%;
   margin: auto;
-}
+} */
 
 .level-buttons {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-top: 40px;
+}
+
+.lvl-btn {
+  width: 10%;
+  padding: 10px;
+  font-size: 2rem;
+  letter-spacing: .3rem;
+  background-color: transparent;
+  border: 1px solid #26b667;
+  box-sizing: border-box;
+  color: #00132C;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 32px 46px;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  border-radius: 0px;
+  margin-right: 20px;
+  margin-top: 40px;
+}
+
+.lvl-btn:hover,
+.lvl-btn:active {
+  outline: 0;
+  background-color: #91ebb8;
+  border: 1px solid #26b667;
+  cursor: pointer;
+}
+
+.lvl-btn:before {
+  background-color: #D5EDF6;
+  content: "";
+  height: calc(100% + 3px);
+  position: absolute;
+  right: -7px;
+  top: -9px;
+  transition: background-color 300ms ease-in;
+  width: 100%;
+  z-index: -1;
+}
+
+.lvl-btn:hover:before {
+  background-color: #8bf4c1;
 }
 
 .link-btn a, a:hover {
@@ -192,4 +256,41 @@
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-bottom: 0;
+}
+
+
+@media (min-width: 768px) {
+  .lvl-btn {
+    padding: 16px 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .level-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lvl-btn {
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 32px 32px;
+    width: 60%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 991px) {
+  .level-buttons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .lvl-btn {
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 16px 32px;
+    width: 15%;
+    margin-top: 20px;
+    text-align: center;
+  }
 }
