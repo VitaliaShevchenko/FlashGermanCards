@@ -128,9 +128,8 @@ async function getData(searchedPic) {
       } else {
         cardPic.setAttribute('src', `${picLink}`);
       }
-  })
-        
-  }
+  })   
+}
   
 
 getData(picWord);

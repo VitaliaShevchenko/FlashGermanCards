@@ -25,12 +25,6 @@ body {
   width: 80%;
 }
 
-/* .choose-level-text {
-  text-align: center;
-  width: 80%;
-  margin: auto;
-} */
-
 .level-buttons {
   display: flex;
   justify-content: center;
@@ -102,13 +96,14 @@ body {
 .card-container {
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 5px;
+  border-radius: 1px;
   width: 40%;
   min-width: 320px;
   min-height: 200px;
   text-align: center;
   padding: 10px;
   margin-bottom: 10px;
+  background-color: 	rgba(249, 246, 238, 0.562);
 }
 
 .translation {
@@ -130,6 +125,25 @@ body {
 .next-word-button,
 .show-answer-button,
 .previous-card-button {
+  width: 10%;
+  padding: 10px;
+  letter-spacing: .2rem;
+  background-color: transparent;
+  border: 1px solid #26b667;
+  box-sizing: border-box;
+  color: #00132C;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  padding: 16px 23px;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  border-radius: 0px;
+  margin-right: 20px;
+  margin-top: 40px;
   margin: auto;
   width: 40%;
   min-width: 320px;
@@ -139,10 +153,30 @@ body {
   }
 }
 
+.next-word-button:active:focus {
+  background-color: transparent;
+  color:  rgb(25, 92, 92);
+  border: 1px solid darkcyan;
+}
+
+.show-answer-button:active:focus {
+  background-color: darkcyan;
+}
+
+.previous-card-button:active:focus {
+  background-color: rgb(204, 171, 83);
+}
+
+.next-word-button:hover {
+  background-color: #92e4bc;
+  color:  rgb(25, 92, 92);
+  border: 1px solid darkcyan;
+}
+
 .previous-card-button:hover { 
   background-color: rgb(204, 171, 83);
   border: 1px solid  rgb(204, 171, 83);
-
+  color:  rgb(25, 92, 92);
 }
 
 .show-answer-button {
@@ -156,7 +190,7 @@ body {
 }
 
 .card-button-container {
-  margin-top: 50px;
+  margin-top: 15px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -252,10 +286,11 @@ body {
 .card-picture {
   width: 325px;
   height: 210px;
-  border-radius: 5px;
+  border-radius: 1px;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin-bottom: 0;
+  object-fit: cover;
 }
 
 
