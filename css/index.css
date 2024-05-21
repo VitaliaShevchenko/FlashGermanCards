@@ -56,9 +56,9 @@ body {
 }
 
 .lvl-btn:hover,
-.lvl-btn:active {
+.lvl-btn:active:focus {
   outline: 0;
-  background-color: #91ebb8;
+  background-color: #88dcad;
   border: 1px solid #26b667;
   cursor: pointer;
 }
@@ -95,7 +95,7 @@ body {
 
 .card-container {
   margin: auto;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.11) 0px 3px 3px;
   border-radius: 1px;
   width: 40%;
   min-width: 320px;
@@ -288,7 +288,7 @@ body {
   height: 210px;
   border-radius: 1px;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.105) 0px 3px 8px;
   margin-bottom: 0;
   object-fit: cover;
 }
