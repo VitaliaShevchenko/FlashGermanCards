@@ -4,7 +4,7 @@
 
 body {
   background-color: #8ae9b3;
-  background-image: linear-gradient(315deg, #b2e8ca 0%, #e1e9f0 74%);
+  background-image: linear-gradient(315deg, #c8dfc8 0%, #f7f3ea 74%);
   background-size: 100% auto;
   background-position: center top;
   background-attachment: fixed;
@@ -24,7 +24,7 @@ html {
 }
 
 .navbar {
-  background-color: #8ae9b3;
+  /* background-color: #c8dfc8; */
 }
 
 .main-container {
@@ -52,7 +52,7 @@ html {
   font-size: 2rem;
   letter-spacing: .3rem;
   background-color: transparent;
-  border: 1px solid #26b667;
+  border: 1px solid #f4dcb8;
   box-sizing: border-box;
   color: #00132C;
   font-size: 3rem;
@@ -72,13 +72,13 @@ html {
 .lvl-btn:hover,
 .lvl-btn:active:focus {
   outline: 0;
-  background-color: #88dcad;
-  border: 1px solid #26b667;
+  background-color: #f4dcb8;
+  border: 1px solid #d8ab9e;
   cursor: pointer;
 }
 
 .lvl-btn:before {
-  background-color: #D5EDF6;
+  background-color: #f7f3ea;
   content: "";
   height: calc(100% + 3px);
   position: absolute;
@@ -90,7 +90,7 @@ html {
 }
 
 .lvl-btn:hover:before {
-  background-color: #8bf4c1;
+  background-color: #d8ab9e;
 }
 
 .link-btn a, a:hover {
@@ -120,42 +120,42 @@ html {
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px;
   border-radius: 1px;
-  width: 100%;
+  width: 50vh;
   min-width: 320px;
   min-height: 200px;
   text-align: center;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: 	rgba(249, 246, 238, 0.562);
+  background-color: 	#f7f3ea;
 }
 
 .translation {
-  color: rgb(179,139,88);
+  color: #a8857b;
   margin: auto;
   font-size: 35px;
 }
 
 .word {
-  color: rgb(20,39,78);
+  color: #00132C;
   font-size: 40px;
 }
 
 .example {
-  color: rgb(81,115,81);
+  color: #677467;
   font-style: italic;
 }
 
 .next-word-button,
 .show-answer-button,
 .previous-card-button {
-  width: 10%;
+  font-family: "Poppins", sans-serif;
   padding: 10px;
-  letter-spacing: .2rem;
+  letter-spacing: .1rem;
   background-color: transparent;
-  border: 1px solid #26b667;
+  border: 1px solid #c8dfc8;
   box-sizing: border-box;
   color: #00132C;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.5rem;
   padding: 16px 23px;
@@ -168,26 +168,26 @@ html {
   margin-right: 20px;
   margin-top: 40px;
   margin: auto;
-  width: 40%;
+  width: 50vh;
   min-width: 320px;
   &:hover, &:focus-within {
-    box-shadow: 0 0 0 2px #16C79A, 0 10px 60px 0 rgba(#000, .1);
+    box-shadow: 0 0 0 2px #c8dfc8, 0 10px 60px 0 rgba(#000, .1);
     transform: translatey(-2px);
   }
 }
 
 .next-word-button:active:focus {
   background-color: transparent;
-  color:  rgb(25, 92, 92);
+  color:  #c8dfc8;
   border: 1px solid darkcyan;
 }
 
 .show-answer-button:active:focus {
-  background-color: darkcyan;
+  background-color: #c8dfc8;
 }
 
 .previous-card-button:active:focus {
-  background-color: rgb(204, 171, 83);
+  background-color: #f4dcb8;
 }
 
 .next-word-button:hover {
@@ -196,23 +196,26 @@ html {
   border: 1px solid darkcyan;
 }
 
+
+.previous-card-button {
+  background-color: #f4dcb8;
+}
+
 .previous-card-button:hover { 
-  background-color: rgb(204, 171, 83);
+  background-color: #cdb89a;
   border: 1px solid  rgb(204, 171, 83);
   color:  rgb(25, 92, 92);
 }
 
-.show-answer-button {
-  background-color: darkcyan;
-  border: 1px solid darkcyan;
-}
-
 .show-answer-button:hover {
-  background-color: rgb(25, 92, 92);
+  background-color: #accaac;
   border: 1px solid rgb(25, 92, 92);
 }
 
-
+.show-answer-button {
+  background-color: #c8dfc8;
+  border: 1px solid darkcyan;
+}
 
 .german-answer-hidden {
   display: none;
@@ -227,13 +230,15 @@ html {
   margin-bottom: 20px;
 }
 
-.disabled-previous-card {
-  background-color: rgba(233, 196, 94, 0.348);
-}
+
 
 .previous-card-button {
-  background-color: rgb(233, 196, 94);
+  background-color: #f4dcb8;
   border: 1px solid rgb(233, 196, 94);
+}
+
+.disabled-previous-card {
+  background-color: rgba(233, 196, 94, 0.348);
 }
 
 .all-words-container {
@@ -272,17 +277,6 @@ html {
 
 }
 
-.level-sign {
-  margin-left: 5px;
-  margin-top: 3px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  font-size: 12px;
-  font-weight: bold;
-  color:darkgreen;
-}
-
 .search-word-text {
   padding-left: 4px;
   margin-bottom: 0;
@@ -294,20 +288,25 @@ html {
 .card-picture-container {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 100vh;
   margin: auto;
   align-items: center;
-  margin-top: 20px;
+  justify-content: center;
+  height: 100vh;
 }
 
 .card-picture {
-  width: 325px;
-  height: 210px;
+  width: 50vh;
+  height: 30vh;
   border-radius: 1px;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.105) 0px 3px 8px;
   margin-bottom: 0;
   object-fit: cover;
+}
+
+.about-project {
+  font-family: "Poppins", sans-serif;
 }
 
 
@@ -344,5 +343,11 @@ html {
     width: 15%;
     margin-top: 20px;
     text-align: center;
+  }
+}
+
+@media (max-width: 767px) { 
+  .navbar{
+      /* display: none; */
   }
 }

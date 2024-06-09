@@ -25,8 +25,6 @@ function handleSortingBtn() {
   console.log(sorting)
 }
 
-sortingBtn.addEventListener('click', handleSortingBtn);
-
 new gridjs.Grid({
   columns: ["German", "English", "Example sentence"],
   data: renderedData,
