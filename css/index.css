@@ -26,6 +26,10 @@ html {
 .navbar {
   background-color: transparent !important;
 }
+.navbar a,
+button {
+  font-family: "Franklin Gothic Medium" !important;
+}
 
 .main-container {
   width: 100%;
