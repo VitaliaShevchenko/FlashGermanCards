@@ -24,7 +24,7 @@ html {
 }
 
 .navbar {
-  /* background-color: #c8dfc8; */
+  background-color: transparent !important;
 }
 
 .main-container {
@@ -50,11 +50,11 @@ html {
   width: 10%;
   padding: 10px;
   font-size: 2rem;
-  letter-spacing: .3rem;
+  letter-spacing: 0.3rem;
   background-color: transparent;
   border: 1px solid #f4dcb8;
   box-sizing: border-box;
-  color: #00132C;
+  color: #00132c;
   font-size: 3rem;
   font-weight: 500;
   line-height: 24px;
@@ -93,7 +93,8 @@ html {
   background-color: #d8ab9e;
 }
 
-.link-btn a, a:hover {
+.link-btn a,
+a:hover {
   color: white;
   text-decoration: none;
 }
@@ -113,7 +114,6 @@ html {
   display: flex;
   flex-direction: column;
   gap: 7px;
-  
 }
 
 .card-container {
@@ -126,7 +126,7 @@ html {
   text-align: center;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: 	#f7f3ea;
+  background-color: #f7f3ea;
 }
 
 .translation {
@@ -136,7 +136,7 @@ html {
 }
 
 .word {
-  color: #00132C;
+  color: #00132c;
   font-size: 40px;
 }
 
@@ -150,11 +150,11 @@ html {
 .previous-card-button {
   font-family: "Poppins", sans-serif;
   padding: 10px;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   background-color: transparent;
   border: 1px solid #c8dfc8;
   box-sizing: border-box;
-  color: #00132C;
+  color: #00132c;
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.5rem;
@@ -170,15 +170,16 @@ html {
   margin: auto;
   width: 50vh;
   min-width: 320px;
-  &:hover, &:focus-within {
-    box-shadow: 0 0 0 2px #c8dfc8, 0 10px 60px 0 rgba(#000, .1);
+  &:hover,
+  &:focus-within {
+    box-shadow: 0 0 0 2px #c8dfc8, 0 10px 60px 0 rgba(#000, 0.1);
     transform: translatey(-2px);
   }
 }
 
 .next-word-button:active:focus {
   background-color: transparent;
-  color:  #c8dfc8;
+  color: #c8dfc8;
   border: 1px solid darkcyan;
 }
 
@@ -192,19 +193,18 @@ html {
 
 .next-word-button:hover {
   background-color: #92e4bc;
-  color:  rgb(25, 92, 92);
+  color: rgb(25, 92, 92);
   border: 1px solid darkcyan;
 }
-
 
 .previous-card-button {
   background-color: #f4dcb8;
 }
 
-.previous-card-button:hover { 
+.previous-card-button:hover {
   background-color: #cdb89a;
-  border: 1px solid  rgb(204, 171, 83);
-  color:  rgb(25, 92, 92);
+  border: 1px solid rgb(204, 171, 83);
+  color: rgb(25, 92, 92);
 }
 
 .show-answer-button:hover {
@@ -223,14 +223,12 @@ html {
 
 .not-chosen-level-btn {
   padding: 20px;
-  background-color: #16C79A;
+  background-color: #16c79a;
   border: none;
   font-style: bold;
   font-size: 20px;
   margin-bottom: 20px;
 }
-
-
 
 .previous-card-button {
   background-color: #f4dcb8;
@@ -263,18 +261,17 @@ html {
 }
 
 .german-word {
-  color:  rgb(20,39,78);
+  color: rgb(20, 39, 78);
   font-weight: bold;
 }
 
 .english-word {
-  color: rgb(179,139,88);
+  color: rgb(179, 139, 88);
 }
 
 .example-line {
-  color: rgb(81,115,81);
+  color: rgb(81, 115, 81);
   font-style: italic;
-
 }
 
 .search-word-text {
@@ -308,7 +305,6 @@ html {
 .about-project {
   font-family: "Poppins", sans-serif;
 }
-
 
 @media (min-width: 768px) {
   .lvl-btn {
@@ -346,8 +342,8 @@ html {
   }
 }
 
-@media (max-width: 767px) { 
-  .navbar{
-      /* display: none; */
+@media (max-width: 767px) {
+  .navbar {
+    /* display: none; */
   }
 }
