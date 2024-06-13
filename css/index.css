@@ -236,7 +236,7 @@ a:hover {
 }
 
 .disabled-previous-card {
-  background-color: rgba(233, 196, 94, 0.348);
+  background-color: rgba(233, 196, 94, 0.348) !important;
 }
 
 .all-words-container {
