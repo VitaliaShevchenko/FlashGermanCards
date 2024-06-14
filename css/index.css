@@ -25,16 +25,32 @@ html {
 
 .navbar {
   background-color: transparent !important;
+  width: 100vw !important;
+  margin-left: 0 !important;
 }
-.navbar a,
-button {
-  font-family: "Franklin Gothic Medium" !important;
+
+a.nav-link:hover {
+  text-decoration: underline;
+  color: rgb(15, 30, 30);
+}
+
+.brand-short {
+  display: none;
+  letter-spacing: 0.1rem;
+  font-size: 20px;
+}
+
+.navbar-toggler {
+  position: fixed;
+  right: 40px;
+  top: 10px;
 }
 
 .main-container {
   width: 100%;
   padding: 0;
   justify-content: center;
+  margin-left: 0 !important;
 }
 
 .choose-level-text {
@@ -192,7 +208,7 @@ a:hover {
 }
 
 .previous-card-button:active:focus {
-  background-color: #f4dcb8;
+  background-color: #f4dcb8 !important;
 }
 
 .next-word-button:hover {
@@ -202,7 +218,7 @@ a:hover {
 }
 
 .previous-card-button {
-  background-color: #f4dcb8;
+  background-color: #f4dcb8 !important;
 }
 
 .previous-card-button:hover {
@@ -328,6 +344,13 @@ a:hover {
     padding: 32px 32px;
     width: 60%;
   }
+
+  .brand-short {
+    display: inline-block;
+  }
+  .brand-full {
+    display: none;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 991px) {
@@ -347,7 +370,7 @@ a:hover {
 }
 
 @media (max-width: 767px) {
-  .navbar {
-    /* display: none; */
+  .card-picture-container {
+    width: 100vw;
   }
 }
